@@ -25,7 +25,7 @@ public class Aluno implements Serializable {
 	String nome;
 	
 	@Column(nullable = false)
-	@JsonFormat(pattern = "dd/MM/yyyy hh:mm")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	Date dataIngresso;
 
 	public Aluno(int id, String nome, Date dataIngresso) {
@@ -81,6 +81,11 @@ public class Aluno implements Serializable {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Aluno [id=" + id + ", nome=" + nome + ", dataIngresso=" + dataIngresso + "]";
 	}
 	
 	
